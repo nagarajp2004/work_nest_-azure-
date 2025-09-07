@@ -22,7 +22,7 @@ class TaskViewSet(viewsets.ModelViewSet):
         assigned_to_user = serializer.validated_data.get('assigned_to')
        
         creator = self.request.user
-
+        
         # --- THE CORE LOGIC STARTS HERE ---
         try:
             # Find the permission rule for the person creating the task.
