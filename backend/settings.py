@@ -1,4 +1,6 @@
-
+"""
+Django settings for backend project, simplified for learning and initial deployment.
+"""
 
 from pathlib import Path
 import os
@@ -31,9 +33,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     # WhiteNoise is for serving static files (like admin CSS) in production.
-    'whitenoise.storage.CompressedManifestStaticFilesStorage',
+    # The incorrect line has been removed from here.
     'django.contrib.staticfiles',
     'api.apps.ApiConfig',
+
     'rest_framework',
     'rest_framework_simplejwt',
     'corsheaders',
@@ -105,6 +108,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 # This is the folder where Django will collect all static files for production.
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+# This is the CORRECT place for this setting.
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # The URL of your future frontend will be an environment variable in Azure.
