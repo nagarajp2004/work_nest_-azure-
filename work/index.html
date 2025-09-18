@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">🏢</div>
+            <h1>Work Nest</h1>
+            <p class="subtitle">Welcome back! Please sign in to your account</p>
+        </div>
+
+        <div class="auth-toggle" id="authToggle">
+            <button class="signin-btn active" onclick="switchMode('signin')">Sign In</button>
+            <button class="signup-btn" onclick="switchMode('signup')">Sign Up</button>
+        </div>
+
+        <div class="form-container">
+            <div id="alertContainer"></div>
+            
+            <form id="authForm">
+                <!-- Sign Up Only Fields -->
+                <div class="signup-fields" id="signupFields">
+                    <div class="name-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" placeholder="Enter your first name">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" placeholder="Enter your last name">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="designation">Designation Level</label>
+                        <select id="designation" name="designation" style="width: 100%; padding: 16px 20px; border: 2px solid #e5e7eb; border-radius: 12px; font-size: 1rem; font-weight: 500; background: white; color: #374151; transition: all 0.3s ease;">
+                            <option value="">Select your level</option>
+                            <option value="JUNIOR">Junior</option>
+                            <option value="SENIOR">Senior</option>
+                            <option value="MANAGER">Manager</option>
+                            <option value="ADMIN">Admin</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Common Fields -->
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="input-wrapper">
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                        <button type="button" class="password-toggle" onclick="togglePassword()">👁️</button>
+                    </div>
+                </div>
+
+                <div class="signup-fields" id="confirmPasswordField">
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <div class="input-wrapper">
+                            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password">
+                            <button type="button" class="password-toggle" onclick="togglePassword('confirmPassword')">👁️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="forgot-password" id="forgotPassword">
+                    <a href="#" onclick="showAlert('Password reset functionality coming soon!', 'info')">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <span class="loading-spinner"></span>
+                    <span id="submitText">Sign In</span>
+                </button>
+            </form>
+
+            <div class="divider">
+                <span>or continue with</span>
+            </div>
+
+            <div class="social-login">
+                <button class="social-btn" onclick="showAlert('Google login coming soon!', 'info')">🔍</button>
+                <button class="social-btn" onclick="showAlert('Microsoft login coming soon!', 'info')">📧</button>
+                <button class="social-btn" onclick="showAlert('GitHub login coming soon!', 'info')">💻</button>
+            </div>
+
+            <p class="terms">
+                By continuing, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="app.js">
+            </script>
+</body>
+</html>
+
